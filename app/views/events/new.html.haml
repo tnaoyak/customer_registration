@@ -1,0 +1,39 @@
+%body
+  .event-registration
+    %h1 イベント登録
+    .event-form
+      = form_with model: @event do |f|
+        .form-group
+          = f.label :name, "イベント名", class: "form-label"
+          = f.text_field :name, placeholder: "イベント名を入力", class: "input-field"
+        .form-group
+          = f.label :name, "学校名", class: "form-label"
+          .select-wrap
+            = f.collection_select(:prefecture_id, Prefecture.all, :id, :name, { prompt: "" } , { class: "select-default"} )
+        .form-group
+          %label.form-label web公開
+          .radio-button-wrap
+            = f.radio_button :web_public, "0", class: "radio-button"
+            = f.label :web_public, "有", class: "radio-button--text"
+            = f.radio_button :web_public, "1", class: "radio-button back"
+            = f.label :web_public, "無", class: "radio-button--text"
+        .form-group.public-wrap
+          %label.form-label.public-wrap--label web公開日
+          = f.label :public_date, "開始日", class: "public-wrap--title"
+          = f.date_select :public_date, {use_month_numbers: true, start_year: 2019}, class: "public-wrap--date"
+          %span 〜
+          = f.label :public_end_date, "終了日", class: "public-wrap--title"
+          = f.date_select :public_end_date, {use_month_numbers: true, start_year: 2019}, class: "public-wrap--date"
+          .public-period
+            = f.check_box :melmaga, {}, checked_value = "1", unchecked_value = "0"
+            = f.label :melmaga, "公開終了を1ヶ月後に設定"
+        .form-group
+          .image-upload 画像を選択
+          -# = f.attachment_field :image
+          -# %attachment_image_tag Image, :image, :fill, 100, 100, format: 'jpg'
+        = f.fields_for :company do |c|
+          .form-group
+            = c.label :remarks, "備考", class: "form-label"
+            = c.text_area :remarks, placeholder: "補足事項など", class: "input-field text-area"
+
+        = f.submit "登録", class: "btn-default btn-red"
