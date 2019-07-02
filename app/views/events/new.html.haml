@@ -11,9 +11,9 @@
           .select-wrap
             = f.collection_select(:school_id, School.all, :id, :name, { prompt: "" } , { class: "select-default"} )
             .new-school-check
-              %input{ type: "checkbox", name: "public-period"} 学校を新規登録する
+              %input{ type: "checkbox", name: "public-period", id: "new_school_check_box"} 学校を新規登録する
         = fields_for @school do |s|
-          .form-group
+          .form-group.new_school
             = s.label :name, "新規学校名", class: "form-label"
             = s.text_field :name, placeholder: "新規学校名を入力", class: "input-field"
         .form-group
