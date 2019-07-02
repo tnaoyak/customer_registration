@@ -7,9 +7,15 @@
           = f.label :name, "イベント名", class: "form-label"
           = f.text_field :name, placeholder: "イベント名を入力", class: "input-field"
         .form-group
-          = f.label :name, "学校名", class: "form-label"
+          = f.label :school_id, "学校名", class: "form-label"
           .select-wrap
-            = f.collection_select(:prefecture_id, Prefecture.all, :id, :name, { prompt: "" } , { class: "select-default"} )
+            = f.collection_select(:school_id, School.all, :id, :name, { prompt: "" } , { class: "select-default"} )
+            .new-school-check
+              %input{ type: "checkbox", name: "public-period"} 学校を新規登録する
+        = fields_for @school do |s|
+          .form-group
+            = s.label :name, "新規学校名", class: "form-label"
+            = s.text_field :name, placeholder: "新規学校名を入力", class: "input-field"
         .form-group
           %label.form-label web公開
           .radio-button-wrap
@@ -25,15 +31,13 @@
           = f.label :public_end_date, "終了日", class: "public-wrap--title"
           = f.date_select :public_end_date, {use_month_numbers: true, start_year: 2019}, class: "public-wrap--date"
           .public-period
-            = f.check_box :melmaga, {}, checked_value = "1", unchecked_value = "0"
-            = f.label :melmaga, "公開終了を1ヶ月後に設定"
+            %input{ type: "checkbox", name: "public-period"} 公開終了を1ヶ月後に設定
         .form-group
           .image-upload 画像を選択
           -# = f.attachment_field :image
           -# %attachment_image_tag Image, :image, :fill, 100, 100, format: 'jpg'
-        = f.fields_for :company do |c|
-          .form-group
-            = c.label :remarks, "備考", class: "form-label"
-            = c.text_area :remarks, placeholder: "補足事項など", class: "input-field text-area"
+        .form-group
+          = f.label :remarks, "備考", class: "form-label"
+          = f.text_area :remarks, placeholder: "補足事項など", class: "input-field text-area"
 
         = f.submit "登録", class: "btn-default btn-red"
