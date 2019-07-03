@@ -68,17 +68,89 @@
 }
 .public-wrap {
   display: block;
-  &--label {
+  &__label {
     display: flex;
   }
-  &--title {
+  &__title {
     margin-left: 20px;
   }
-  span {
+  &__date {
+    height: 48px;
+    padding: 0 16px;
+    border-radius: 4px;
+    border: 1px solid gray;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  &__wave-line {
     margin-left: 20px;
   }
   .public-period {
     margin: 10px 0 0 20px;
+  }
+}
+.disabled {
+  color: #dddddd;
+  .public-wrap__date {
+    color: #dddddd;
+    border: 1px solid #dddddd;
+  }
+  .checkbox--area::after {
+    margin-top: -10px;	/* チェック枠の位置 */
+    width: 15px;	/* ボックスの横幅を指定する */
+    height: 15px;	/* ボックスの高さを指定する */
+    border: 2px solid #dddddd;	/* ボックスの境界線を実線で指定する */
+    border-radius: 6px;	/* ボックスの角丸を指定する */
+    position: absolute;	/* ボックスの位置を指定する */
+    content: "";	/* ボックスのコンテンツ */
+    display: block;	/* ブロックレベル要素化する */
+    top: 50%;	/* 上部から配置の基準位置を決める */
+  }
+  .checkbox--area::before {
+    display: none;
+  }
+}
+.checkbox {
+  input {
+    display: none;
+  }
+  &--area {
+    vertical-align: middle;
+    position: relative;
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 5px;
+  }
+  &--area::before {
+    left: 6px;	/* 左から配置の基準位置を決める */
+    margin-top: -7px;	/* チェックマークの位置 */
+    width: 5px;	/* ボックスの横幅を指定する */
+    height: 9px;	/* ボックスの高さを指定する */
+    border-right: 3px solid #0171bd;	/* 境界線（右）のスタイルを指定する */
+    border-bottom: 3px solid #0171bd;	/* 境界線（下）のスタイルを指定する */
+    transform: rotate(45deg);	/* 要素を回転させる */
+    opacity: 0;	/* 要素を透過指定する */
+    position: absolute;	/* ボックスの位置を指定する */
+    content: "";	/* ボックスのコンテンツ */
+    display: block;	/* ブロックレベル要素化する */
+    top: 50%;	/* 上部から配置の基準位置を決める */
+  }
+  input[type=checkbox]:checked + &--area::before {
+    opacity: 1;	/* 要素を表示する */
+  }
+  &--area::after {
+    // left: 15px;	/* 左から配置の基準位置を決める */
+    margin-top: -10px;	/* チェック枠の位置 */
+    width: 15px;	/* ボックスの横幅を指定する */
+    height: 15px;	/* ボックスの高さを指定する */
+    border: 2px solid #ccc;	/* ボックスの境界線を実線で指定する */
+    border-radius: 6px;	/* ボックスの角丸を指定する */
+    position: absolute;	/* ボックスの位置を指定する */
+    content: "";	/* ボックスのコンテンツ */
+    display: block;	/* ブロックレベル要素化する */
+    top: 50%;	/* 上部から配置の基準位置を決める */
   }
 }
 .btn-default {
@@ -97,4 +169,12 @@
   margin: 40px 0 0;
   transition: all ease-out .3s;
   -webkit-transition: all ease-out .3s;
+}
+
+// flatpickrカレンダーの土日に色を付ける
+.flatpickr-weekdaycontainer > .flatpickr-weekday:nth-child(1){
+  color: #dc3545;
+}
+.flatpickr-weekdaycontainer > .flatpickr-weekday:nth-child(7){
+  color: #007bff;
 }

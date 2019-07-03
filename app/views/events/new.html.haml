@@ -9,9 +9,12 @@
         .form-group
           = f.label :school_id, "学校名", class: "form-label"
           .select-wrap
-            = f.collection_select(:school_id, School.all, :id, :name, { prompt: "" } , { class: "select-default"} )
+            = f.collection_select(:school_id, School.all, :id, :name, { prompt: "" } , { class: "select-default", id: "school-select"} )
             .new-school-check
-              %input{ type: "checkbox", name: "public-period", id: "new_school_check_box"} 学校を新規登録する
+              %label.checkbox
+                %input{ type: "checkbox", name: "public-period", id: "new_school_check_box"}
+                %label.checkbox--area{ for: "new_school_check_box" }
+                %span.checkbox--text 学校を新規登録する
         = fields_for @school do |s|
           .form-group.new_school
             = s.label :name, "新規学校名", class: "form-label"
@@ -19,19 +22,22 @@
         .form-group
           %label.form-label web公開
           .radio-button-wrap
-            = f.radio_button :web_public, "0", class: "radio-button"
+            = f.radio_button :web_public, "0", value: "0", class: "radio-button"
             = f.label :web_public, "有", class: "radio-button--text"
-            = f.radio_button :web_public, "1", class: "radio-button back"
+            = f.radio_button :web_public, "1", value: "1", class: "radio-button back", checked: "checked"
             = f.label :web_public, "無", class: "radio-button--text"
         .form-group.public-wrap
-          %label.form-label.public-wrap--label web公開日
-          = f.label :public_date, "開始日", class: "public-wrap--title"
-          = f.date_select :public_date, {use_month_numbers: true, start_year: 2019}, class: "public-wrap--date"
-          %span 〜
-          = f.label :public_end_date, "終了日", class: "public-wrap--title"
-          = f.date_select :public_end_date, {use_month_numbers: true, start_year: 2019}, class: "public-wrap--date"
+          %label.form-label.public-wrap__label web公開日
+          = f.label :public_stert_date, "開始日", class: "public-wrap__title"
+          = f.text_field :public_stert_date, type: "text", id: "public-wrap__start-date", class: "public-wrap__date"
+          %span.public-wrap__wave-line 〜
+          = f.label :public_end_date, "終了日", class: "public-wrap__title"
+          = f.text_field :public_end_date, type: "text", id: "public-wrap__end-date", class: "public-wrap__date"
           .public-period
-            %input{ type: "checkbox", name: "public-period"} 公開終了を1ヶ月後に設定
+            %label.checkbox
+              %input{ type: "checkbox", name: "public-period", id: "public-period__checkbox"}
+              %label.checkbox--area{ for: "public-period__checkbox" }
+              %span.checkbox--text 公開終了を1ヶ月後に設定
         .form-group
           .image-upload 画像を選択
           -# = f.attachment_field :image
