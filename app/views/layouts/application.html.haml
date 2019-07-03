@@ -8,5 +8,14 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous")
+
+    // flatpickr導入
+    %link(rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css")
+    %script(src="https://unpkg.com/flatpickr")
+    %script(src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/ja.js")
+    // スタイル選択
+    %link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css")
+    // IE9対応
+    %link(rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/ie.css")
   %body
     = yield
