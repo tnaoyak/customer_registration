@@ -75,4 +75,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'haml-rails'
 gem 'erb2haml'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
-gem "refile-mini_magick"
+gem "refile-mini_magick", github: 'refile/refile-mini_magick'
