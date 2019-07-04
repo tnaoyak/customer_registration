@@ -40,8 +40,10 @@
               %span.checkbox--text 公開終了を1ヶ月後に設定
         .form-group
           .image-upload 画像を選択
-          -# = f.attachment_field :image
-          -# %attachment_image_tag Image, :image, :fill, 100, 100, format: 'jpg'
+          = f.attachment_field :image
+          = attachment_image_tag @event, :image, :fill, 100, 100, format: 'jpg'
+        
+
         .form-group
           = f.label :remarks, "備考", class: "form-label"
           = f.text_area :remarks, placeholder: "補足事項など", class: "input-field text-area"

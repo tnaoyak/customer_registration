@@ -1,4 +1,4 @@
-$(function () {
+$(document).on('turbolinks:load', function(){
 
   // 新規学校登録の表示・非表示
   $('.new_school').hide();
@@ -74,5 +74,4 @@ $(function () {
       $('#public-wrap__end-date').val(endDate);
     }
   });
-
 });
