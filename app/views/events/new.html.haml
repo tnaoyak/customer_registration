@@ -1,6 +1,9 @@
 %body
-  .event-registration
-    %h1 イベント登録
+  .event-new
+    .event-new__head
+      %h1 イベント登録
+      .event-new__head__link
+        = link_to "イベント一覧へ", events_path
     .event-form
       = form_with model: @event do |f|
         .form-group
@@ -39,9 +42,12 @@
               %label.checkbox--area{ for: "public-period__checkbox" }
               %span.checkbox--text 公開終了を1ヶ月後に設定
         .form-group
-          .image-upload 画像を選択
-          -# = f.attachment_field :image
-          -# %attachment_image_tag Image, :image, :fill, 100, 100, format: 'jpg'
+          = f.fields_for :images do |i|
+            .form-label 画像を選択
+            = i.attachment_field :image, id: "drop-area", class: "input-field image-field"
+            = i.label :image, "クリックして選択", for: "drop-area", class: "image-input-field", id: "img_field"
+            - if @image.image_id.present?
+              = @image.image_id
         .form-group
           = f.label :remarks, "備考", class: "form-label"
           = f.text_area :remarks, placeholder: "補足事項など", class: "input-field text-area"
