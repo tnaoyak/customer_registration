@@ -3,15 +3,6 @@
   box-sizing: border-box;
   display: flex;
 }
-.form-arbitrary {
-  background: #ccc;
-  margin: 0 0 0 8px;
-  padding: 2px 4px;
-  border-radius: 2px;
-  color: #fff;
-  font-size: 12px;
-  vertical-align: top;
-}
 .form-label{
   font-weight: 600;
   font-size: 18px;
@@ -153,9 +144,15 @@
     top: 50%;	/* 上部から配置の基準位置を決める */
   }
 }
+.image-input-field{
+  display: block;
+}
+.image-field {
+  display: none;
+}
 .btn-default {
   display: block;
-  width: 100%;
+  width: 300px;
   line-height: 48px;
   font-size: 14px;
   border: 1px solid transparent;
@@ -166,7 +163,7 @@
   background: #ea352d;
   border: 1px solid #ea352d;
   color: #fff;
-  margin: 40px 0 0;
+  margin: 40px auto 0;
   transition: all ease-out .3s;
   -webkit-transition: all ease-out .3s;
 }
@@ -178,3 +175,48 @@
 .flatpickr-weekdaycontainer > .flatpickr-weekday:nth-child(7){
   color: #007bff;
 }
+
+// 画像サムネイル表示エリア
+#img_field {
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px 8px;
+  border: solid 1px gray;
+  color: rgb(150, 150, 150);
+  position: relative;
+  padding: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+  height: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+  text-align: center;
+}
+// #img_field:hover {
+//   background-color: #EDBC6C;
+//   transition: 0.3s ease-out;
+//   opacity: 0.9;
+// }
+
+// dropzone用の記述
+// .dropzone {
+//   border: 2px dashed #b4bcc2;
+//   display: block;
+//   .drop-form {
+//     display: none;
+//   }
+// }
+// .dz-message {
+//   font-size: 16px;
+//   text-align: center;
+//   margin: 0
+// }
+// .dz-error {
+//   // opacity: 0;
+// }

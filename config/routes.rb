@@ -3,4 +3,5 @@ Rails.application.routes.draw do
   root "events#new"
   resources :events
   resources :schools
+  resources :images
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_07_04_061450) do
+ActiveRecord::Schema.define(version: 2019_07_04_144804) do
 
   create_table "events", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -21,8 +21,17 @@ ActiveRecord::Schema.define(version: 2019_07_04_061450) do
     t.bigint "school_id"
     t.string "public_stert_date"
     t.string "public_end_date"
-    t.string "image_id"
     t.index ["school_id"], name: "index_events_on_school_id"
+  end
+
+  create_table "images", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "image_id"
+    t.string "image_filename"
+    t.string "url"
+    t.bigint "event_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["event_id"], name: "index_images_on_event_id"
   end
 
   create_table "schools", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -32,4 +41,5 @@ ActiveRecord::Schema.define(version: 2019_07_04_061450) do
   end
 
   add_foreign_key "events", "schools"
+  add_foreign_key "images", "events"
 end
