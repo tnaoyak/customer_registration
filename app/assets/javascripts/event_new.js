@@ -6,10 +6,12 @@ $(document).on('turbolinks:load', function(){
     var prop = $(this).prop('checked');
     if (prop) {
       $('.new_school').show();
-      $('#school-select').attr('disabled','disabled'); // 選択不可にする
+      $('#school_select').attr('disabled','disabled'); // 選択不可にする
+      $('#school_select').addClass('disabled');
     } else {
       $('.new_school').hide();
-      $('#school-select').removeAttr('disabled');
+      $('#school_select').removeAttr('disabled');
+      $('#school_select').removeClass('disabled');
     }
   });
 
@@ -74,6 +76,27 @@ $(document).on('turbolinks:load', function(){
       $('#public-wrap__end-date').val(endDate);
     }
   });
+
+  // 選択された画像を取得し表示
+  $fileField = $('#drop-area')
+  $($fileField).on('change', $fileField, function(e) {
+    file = e.target.files[0]
+    reader = new FileReader(),
+    $preview = $("#img_field");
+
+    reader.onload = (function(file) {
+      return function(e) {
+        $preview.empty();
+        $preview.append($('<img>').attr({
+          src: e.target.result,
+          width: "100%",
+          class: "preview",
+          title: file.name
+        }));
+      };
+    })(file);
+    reader.readAsDataURL(file);
+  });
 });
 
 // Dropzone用の記述
@@ -93,27 +116,3 @@ $(document).on('turbolinks:load', function(){
 //       }
 //   });
 // });
-
-$(function(){
-  $fileField = $('#drop-area')
- 
-  // 選択された画像を取得し表示
-  $($fileField).on('change', $fileField, function(e) {
-    file = e.target.files[0]
-    reader = new FileReader(),
-    $preview = $("#img_field");
- 
-    reader.onload = (function(file) {
-      return function(e) {
-        $preview.empty();
-        $preview.append($('<img>').attr({
-          src: e.target.result,
-          width: "100%",
-          class: "preview",
-          title: file.name
-        }));
-      };
-    })(file);
-    reader.readAsDataURL(file);
-  });
-});

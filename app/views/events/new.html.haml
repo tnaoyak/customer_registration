@@ -1,8 +1,8 @@
 %body
-  .event-new
-    .event-new__head
+  .event
+    .event__head
       %h1 イベント登録
-      .event-new__head__link
+      .event__head__link
         = link_to "イベント一覧へ", events_path
     .event-form
       = form_with model: @event do |f|
@@ -12,7 +12,7 @@
         .form-group
           = f.label :school_id, "学校名", class: "form-label"
           .select-wrap
-            = f.collection_select(:school_id, School.all, :id, :name, { prompt: "" } , { class: "select-default", id: "school-select"} )
+            = f.collection_select(:school_id, School.all, :id, :name, { prompt: "" } , { class: "select-default", id: "school_select"} )
             .new-school-check
               %label.checkbox
                 %input{ type: "checkbox", name: "public-period", id: "new_school_check_box"}
