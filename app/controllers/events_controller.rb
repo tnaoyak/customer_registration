@@ -7,10 +7,10 @@ class EventsController < ApplicationController
   end
 
   def create
-    school = School.create(school_params) unless school_params[:name] == ""
+    school = School.create!(school_params) unless school_params[:name] == ""
     event = Event.new(event_params)
     event.school_id = school.id unless school_params[:name] == ""
-    event.save
+    event.save!
     redirect_to event_path(event.id), notice: "イベントを登録しました"
   end
 
