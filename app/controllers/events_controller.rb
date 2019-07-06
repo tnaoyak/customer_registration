@@ -11,7 +11,7 @@ class EventsController < ApplicationController
     event = Event.new(event_params)
     event.school_id = school.id unless school_params[:name] == ""
     event.save
-    redirect_to root_path
+    redirect_to event_path(event.id), notice: "イベントを登録しました"
   end
 
   def index
@@ -19,7 +19,7 @@ class EventsController < ApplicationController
   end
 
   def show
-
+    @event = Event.includes([:school, :image]).find(params[:id])
   end
 
   def edit
