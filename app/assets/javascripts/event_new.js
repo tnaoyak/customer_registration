@@ -93,11 +93,9 @@ $(document).on('turbolinks:load', function(){
           class: "preview",
           title: file.name
         }));
-        console.log(file);
       };
     })(file);
     reader.readAsDataURL(file);
-
   });
 });
 
