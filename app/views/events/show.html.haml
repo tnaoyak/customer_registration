@@ -1,0 +1,38 @@
+%body
+  .event
+    .event__head
+      %h1 イベント詳細
+      .event__head__link
+        = link_to "イベント一覧へ", events_path, class: "event-show-link"
+        = link_to "イベント登録へ", new_event_path, class: "event-show-link"
+    .event-form
+      %table.event-index
+        %tr.event-index__title
+          %th.event-index__title--event_id イベントID
+          %th.event-index__title--event_name イベント名
+          %th.event-index__title--school_name 学校名
+          %th.event-index__title--web_public WEB公開
+          %th.event-index__title--public_start_date 公開開始日
+          %th.event-index__title--public_end_date 公開終了日
+        %tr.event-index__content
+          %td.event-index__content--event_id.table-num
+            = link_to "#{@event.id}", event_path(@event.id)
+          %td.event-index__content--event_name
+            = link_to "#{@event.name}", event_path(@event.id)
+          %td.event-index__content--school_name
+            = @event.school.name
+          %td.event-index__content--web_public
+            = web_public_display_conversion(@event)
+          %td.event-index__content--public_start_date.table-num
+            = @event.public_start_date
+          %td.event-index__content--public_end_date.table-num
+            = @event.public_end_date
+      %table.event-show
+        %tr.event-show__title
+          %th.event-show__title--image 画像
+          %th.event-show__title--remarks 備考
+        %tr.event-show__content
+          %td.event-show__content--image
+            = attachment_image_tag @event.image, :image, :fill, 300, 300, format: "jpg"
+          %td.event-show__content--remarks
+            = @event.remarks

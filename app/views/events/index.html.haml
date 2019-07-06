@@ -16,7 +16,6 @@
         - @events.each do |event|
           %tr.event-index__content
             %td.event-index__content--event_id.table-num
-              -# = attachment_image_tag event.image, :image, :fill, 50, 50, format: "jpg"
               = link_to "#{event.id}", event_path(event.id)
             %td.event-index__content--event_name
               = link_to "#{event.name}", event_path(event.id)

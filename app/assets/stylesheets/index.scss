@@ -7,28 +7,28 @@
 }
 .event-index__title {
   display: flex;
-  th {
-    border: 1px solid;
-    width: 120px;
-    height: 50px;
-    line-height: 30px;
-    padding: 10px;
-    background-color: rgb(200, 247, 255);
-  }
 }
 .event-index__content {
   display: flex;
-  td {
-    border: 1px solid;
-    width: 120px;
-    height: 50px;
-    line-height: 30px;
-    padding: 10px;
-  }
   &--web_public {
     text-align: center;
   }
 }
+// th {
+//   border: 1px solid;
+//   width: 120px;
+//   height: 50px;
+//   line-height: 30px;
+//   padding: 10px;
+//   background-color: rgb(200, 247, 255);
+// }
+// td {
+//   border: 1px solid;
+//   width: 120px;
+//   height: 50px;
+//   line-height: 30px;
+//   padding: 10px;
+// }
 .table-num {
   text-align: right;
 }
