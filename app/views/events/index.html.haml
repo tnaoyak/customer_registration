@@ -5,3 +5,28 @@
       .event__head__link
         = link_to "イベント登録へ", new_event_path
     .event-form
+      %table.event-index
+        %tr.event-index__title
+          %th.event-index__title--event_id イベントID
+          %th.event-index__title--event_name イベント名
+          %th.event-index__title--school_name 学校名
+          %th.event-index__title--web_public WEB公開
+          %th.event-index__title--public_start_date 公開開始日
+          %th.event-index__title--public_end_date 公開終了日
+        - @events.each do |event|
+          %tr.event-index__content
+            %td.event-index__content--event_id.table-num
+              -# = attachment_image_tag event.image, :image, :fill, 50, 50, format: "jpg"
+              = link_to "#{event.id}", event_path(event.id)
+            %td.event-index__content--event_name
+              = link_to "#{event.name}", event_path(event.id)
+            %td.event-index__content--school_name
+              = event.school.name
+            %td.event-index__content--web_public
+              = web_public_display_conversion(event)
+            %td.event-index__content--public_start_date.table-num
+              = event.public_start_date
+            %td.event-index__content--public_end_date.table-num
+              = event.public_end_date
+      .paginate
+        = paginate(@events)

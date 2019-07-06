@@ -1,7 +1,7 @@
 class EventsController < ApplicationController
   def new
     @event = Event.new
-    @event.images.build
+    @event.build_image
     @school = School.new
     @image = Image.new
   end
@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   end
 
   def index
-
+    @events = Event.all.includes([:school, :image]).order("created_at ASC").page(params[:page]).per(10)
   end
 
   def show
@@ -23,7 +23,7 @@ class EventsController < ApplicationController
   end
 
   def edit
-    
+
   end
 
   def destroy
@@ -37,10 +37,10 @@ class EventsController < ApplicationController
       :name,
       :school_id,
       :web_public,
-      :public_stert_date,
+      :public_start_date,
       :public_end_date,
       :remarks,
-      images_attributes: [
+      image_attributes: [
       :image,
       :image_cache_id
       ]

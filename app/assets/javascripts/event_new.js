@@ -78,7 +78,7 @@ $(document).on('turbolinks:load', function(){
   });
 
   // 選択された画像を取得し表示
-  $fileField = $('#drop-area')
+  $fileField = $('#drop_area')
   $($fileField).on('change', $fileField, function(e) {
     file = e.target.files[0]
     reader = new FileReader(),
@@ -93,9 +93,11 @@ $(document).on('turbolinks:load', function(){
           class: "preview",
           title: file.name
         }));
+        console.log(file);
       };
     })(file);
     reader.readAsDataURL(file);
+
   });
 });
 
