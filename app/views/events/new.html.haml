@@ -31,8 +31,8 @@
             = f.label :web_public, "無", class: "radio-button--text"
         .form-group.public-wrap
           %label.form-label.public-wrap__label web公開日
-          = f.label :public_stert_date, "開始日", class: "public-wrap__title"
-          = f.text_field :public_stert_date, type: "text", id: "public-wrap__start-date", class: "public-wrap__date"
+          = f.label :public_start_date, "開始日", class: "public-wrap__title"
+          = f.text_field :public_start_date, type: "text", id: "public-wrap__start-date", class: "public-wrap__date"
           %span.public-wrap__wave-line 〜
           = f.label :public_end_date, "終了日", class: "public-wrap__title"
           = f.text_field :public_end_date, type: "text", id: "public-wrap__end-date", class: "public-wrap__date"
@@ -42,10 +42,10 @@
               %label.checkbox--area{ for: "public-period__checkbox" }
               %span.checkbox--text 公開終了を1ヶ月後に設定
         .form-group
-          = f.fields_for :images do |i|
+          = f.fields_for :image do |i|
             .form-label 画像を選択
-            = i.attachment_field :image, id: "drop-area", class: "input-field image-field"
-            = i.label :image, "クリックして選択", for: "drop-area", class: "image-input-field", id: "img_field"
+            = i.attachment_field :image, id: "drop_area", class: "input-field image-field"
+            = i.label :image, "クリックして選択", for: "drop_area", class: "image-input-field", id: "img_field"
             - if @image.image_id.present?
               = @image.image_id
         .form-group

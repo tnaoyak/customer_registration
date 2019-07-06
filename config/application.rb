@@ -19,5 +19,6 @@ module CustomerRegistration
     config.assets.initialize_on_precompile = false
     config.time_zone = 'Asia/Tokyo'
     config.active_record.default_timezone = :local
+    config.i18n.default_locale = :ja
   end
 end
