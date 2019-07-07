@@ -1,6 +1,6 @@
 $(document).on('turbolinks:load', function(){
 
-  // 新規学校登録の表示・非表示
+  // 新規学校登録の表示・非表示処理
   $('.new_school').hide();
   $('#new_school_check_box').change(function () {
     var prop = $(this).prop('checked');
@@ -15,10 +15,34 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
-  // web公開日の表示・グレーアウト
-  $('.public-wrap').addClass('disabled');
-  $('.public-wrap__date').attr('disabled','disabled');
-  $('#public-period__checkbox').attr('disabled','disabled');
+  // カレンダー形式の日付入力設定
+  $('.public-wrap__date').flatpickr({
+    'locale': 'ja',
+    dateFormat: 'Y/m/d',
+    minDate: 'today',
+    defaultDate: 'today'
+  });
+
+  // web公開日の表示・グレーアウト処理
+  // 公開日に値があるかどうか判定
+  var start_date = $('#public_start_date_hidden').val();
+  var end_date = $('#public_end_date_hidden').val();
+  if (!(start_date == "")){
+    $('#web_public_presence').prop('checked','checked');
+    $('#web_public_none').prop('checked', false);
+    $('.public-wrap').removeClass('disabled');
+    $('.public-wrap__date').removeAttr('disabled');
+    $('#public-period__checkbox').removeAttr('disabled');
+    $('#public-wrap__start-date').val(start_date);
+    $('#public-wrap__end-date').val(end_date);
+  } else {
+    // 値がなければ入力フォームをグレーアウト
+    $('#web_public_none').prop('checked','checked');
+    $('.public-wrap').addClass('disabled');
+    $('.public-wrap__date').attr('disabled','disabled');
+    $('#public-period__checkbox').attr('disabled','disabled');
+  }
+  // チェックをした後の動き
   $('input[name="event[web_public]"]:radio').change(function () {
     var radioval = $(this).val();
     if (radioval == 0) {                              // web公開有がチェックされた時
@@ -32,15 +56,7 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
-  // カレンダー形式の日付入力
-  $('.public-wrap__date').flatpickr({
-    'locale': 'ja',
-    dateFormat: 'Y/m/d',
-    minDate: 'today',
-    defaultDate: 'today'
-  });
-
-  // チェックすると1ヶ月後の日付を表示
+  // チェックすると1ヶ月後の日付を表示する処理
   $('#public-period__checkbox').change(function () {
     // 1ヶ月後の日付を算出する関数
     Date.prototype.addMonth = function( m ) {
@@ -77,7 +93,7 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
-  // 選択された画像を取得し表示
+  // 選択された画像を取得し表示する処理
   $fileField = $('#drop_area')
   $($fileField).on('change', $fileField, function(e) {
     file = e.target.files[0]

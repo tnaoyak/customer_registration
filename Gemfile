@@ -79,3 +79,4 @@ gem "refile-mini_magick", github: 'refile/refile-mini_magick'
 gem 'dropzonejs-rails'
 gem 'rails_12factor', group: :production
 gem 'kaminari'
+gem 'bootstrap', '~> 4.3.1'
