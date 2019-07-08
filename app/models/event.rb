@@ -1,8 +1,8 @@
 class Event < ApplicationRecord
   belongs_to :school, optional: true
-  has_many :images, dependent: :destroy
-  accepts_nested_attributes_for :images
-  accepts_attachments_for :images, attachment: :images
+  has_one :image, dependent: :destroy
+  accepts_nested_attributes_for :image
+  accepts_attachments_for :image, attachment: :image
 
   validates :name, presence: true
   validates :school_id, presence: true

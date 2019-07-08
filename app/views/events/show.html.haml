@@ -33,8 +33,7 @@
           %th.event-show__title--remarks 備考
         %tr.event-show__content
           %td.event-show__content--image
-            - @event.images.each do |event|
-              = attachment_image_tag event, :image, :fill, 300, 300, format: "jpg"
+            = attachment_image_tag @event.image, :image, :fill, 300, 300, format: "jpg"
           %td.event-show__content--remarks
             = @event.remarks
       .event-form__edit-link
