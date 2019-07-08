@@ -80,3 +80,4 @@ gem 'dropzonejs-rails'
 gem 'rails_12factor', group: :production
 gem 'kaminari'
 gem 'bootstrap', '~> 4.3.1'
+gem "refile-s3"
