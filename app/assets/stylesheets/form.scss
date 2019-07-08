@@ -144,12 +144,6 @@
     top: 50%;	/* 上部から配置の基準位置を決める */
   }
 }
-.image-input-field{
-  display: block;
-}
-.image-field {
-  display: none;
-}
 .btn-default {
   display: block;
   width: 300px;
@@ -177,6 +171,12 @@
 }
 
 // 画像サムネイル表示エリア
+.image-input-field{
+  display: block;
+}
+.image-field {
+  display: none;
+}
 #img_field {
   font-size: 15px;
   margin-top: 10px;

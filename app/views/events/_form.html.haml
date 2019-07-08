@@ -1,0 +1,53 @@
+.event-form
+  = form_with model: @event do |f|
+    .form-group
+      = f.label :name, "イベント名", class: "form-label"
+      = f.text_field :name, placeholder: "イベント名を入力", class: "input-field", value: "#{event.name}"
+    .form-group
+      = f.label :school_id, "学校名", class: "form-label"
+      .select-wrap
+        = f.collection_select(:school_id, School.all, :id, :name, { prompt: "" } , { class: "select-default", id: "school_select", value: "#{event.school&.name}"} )
+        .new-school-check
+          %label.checkbox
+            %input{ type: "checkbox", name: "public-period", id: "new_school_check_box"}
+            %label.checkbox--area{ for: "new_school_check_box" }
+            %span.checkbox--text 学校を新規登録する
+    = fields_for @school do |s|
+      .form-group.new_school
+        = s.label :name, "新規学校名", class: "form-label"
+        = s.text_field :name, placeholder: "新規学校名を入力", class: "input-field"
+    .form-group
+      %label.form-label web公開
+      .radio-button-wrap
+        = f.radio_button :web_public, "0", value: "0", class: "radio-button", id: "web_public_presence"
+        = f.label :web_public, "有", class: "radio-button--text"
+        = f.radio_button :web_public, "1", value: "1", class: "radio-button back", id: "web_public_none"
+        = f.label :web_public, "無", class: "radio-button--text"
+        = f.hidden_field :public_start_date, id: "public_start_date_hidden", value: "#{event.public_start_date}"
+        = f.hidden_field :public_end_date, id: "public_end_date_hidden", value: "#{event.public_end_date}"
+    .form-group.public-wrap
+      %label.form-label.public-wrap__label web公開日
+      = f.label :public_start_date, "開始日", class: "public-wrap__title"
+      = f.text_field :public_start_date,{ type: "text", id: "public-wrap__start-date", class: "public-wrap__date", value: "#{event.public_start_date}"}
+      %span.public-wrap__wave-line 〜
+      = f.label :public_end_date, "終了日", class: "public-wrap__title"
+      = f.text_field :public_end_date, type: "text", id: "public-wrap__end-date", class: "public-wrap__date", value: "#{event.public_end_date}"
+      .public-period
+        %label.checkbox
+          %input{ type: "checkbox", name: "public-period", id: "public-period__checkbox"}
+          %label.checkbox--area{ for: "public-period__checkbox" }
+          %span.checkbox--text 公開終了を1ヶ月後に設定
+    .form-group
+      = f.fields_for :image do |i|
+        .form-label 画像を選択
+        = i.attachment_field :image, id: "drop_area", class: "input-field image-field", value: "#{event.image}"
+        = i.label :image, "クリックして選択", for: "drop_area", class: "image-input-field", id: "img_field"
+    - if event.image
+      .form-label.saved_image_title 保存済み画像
+      .saved_image_area
+        = attachment_image_tag event.image, :image, :fill, 200, 120, format: "jpg"
+    .form-group
+      = f.label :remarks, "備考", class: "form-label"
+      = f.text_area :remarks, placeholder: "補足事項など", class: "input-field text-area", value: "#{event.remarks}"
+
+    = f.submit "登録", class: "btn-default btn-red"

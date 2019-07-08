@@ -36,3 +36,6 @@
             = attachment_image_tag @event.image, :image, :fill, 300, 300, format: "jpg"
           %td.event-show__content--remarks
             = @event.remarks
+      .event-form__edit-link
+        = link_to "編集", edit_event_path(@event.id), class: "link-btn"
+        = link_to "削除", "/events/#{@event.id}", method: :delete, class: "link-btn"
