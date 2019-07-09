@@ -15,6 +15,4 @@ $(document).on('turbolinks:load', function(){
   //     $('#public-period__checkbox').attr('disabled','disabled');
   //   }
   // });
-  var aaa = $('.image-field').val();
-  console.log(aaa);
 });
