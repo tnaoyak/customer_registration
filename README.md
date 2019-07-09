@@ -1,24 +1,52 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ポートフォリオご覧いただきありがとうございます。
+機能などの説明は以下になります。
 
-Things you may want to cover:
+前職での経験から、業務アプリのような見た目になっています。
+完成度低いですが、随時改修していきたいと思います。
 
-* Ruby version
+イベント登録アプリ
 
-* System dependencies
+▼関連URL
+  Github[https://github.com/tnaoyak/event_registration](https://github.com/tnaoyak/event_registration)
+  Qiit[https://qiita.com/NT90957869](https://qiita.com/NT90957869)
 
-* Configuration
+▼制作期間
+  約8日
 
-* Database creation
+▼使用した技術
+  Ruby, Ruby on Rails, Haml, sass, jQuery
+  MySQL, refile, AWS S3, Git, Github, RSpec
+  jQueryValidationプラグイン, flatpickr
 
-* Database initialization
+▼工夫した技術
+  1) テキストフィールド, テキストエリア, プルダウンセレクト,
+    チェックボックス,ラジオボタン, ファイルアップロード, ボタン,
+    の７つの機能を実装
 
-* How to run the test suite
+  2) 画像アップロードにrefileを使用し、画像はAWS S3へアップロード
 
-* Services (job queues, cache servers, search engines, etc.)
+  3) jQueryValidationプラグインによるフォームバリデーション、エラーメッセージ表示
 
-* Deployment instructions
+  4) flatpickrを導入し、カレンダー形式での日付選択
 
-* ...
+  5) 画像選択後、選択した画像のサムネイルを表示
+
+  6) イベント情報と画像を別テーブルに保存するためにfields_forを使用
+    refileを使用したファイルアップロードと組み合わせて動く記述を書くため、トライ＆エラーを繰り返した
+
+▼工夫した動作
+1) 「学校を新規登録する」にチェックを入れると学校を新規登録するフォームが出現する。
+  「学校を新規登録する」にチェックを入れた場合は選択した学校名は登録されず、選択欄の編集もできない。
+
+2) 「WEB公開」のチェックを「有」にすると公開日選択フォームが入力可能になり、
+  「無」の時はグレーアウト、入力不可になる。DBへの登録もされない。
+
+3) 「WEB公開日」の「公開終了を1ヶ月後に設定」をチェックすると、「終了日」が「開始日」の1ヶ月後になる。
+
+4) 登録、編集完了時にフラッシュメッセージを表示。
+
+5) 一覧ページは表形式で表示。
+
+6) 一覧ページで学校名orIDをクリックすると詳細画面へ。詳細画面では編集、削除が可能。

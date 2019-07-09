@@ -38,6 +38,8 @@
     font-size: 16px;
     line-height: 1.5;
     cursor: pointer;
+    -moz-appearance: menulist;
+    -webkit-appearance: menulist;
   }
   .new-school-check {
     margin-top: 10px;
@@ -214,11 +216,6 @@
 .name_field {
   width: 100%;
 }
-// #img_field:hover {
-//   background-color: #EDBC6C;
-//   transition: 0.3s ease-out;
-//   opacity: 0.9;
-// }
 
 // dropzone用の記述
 // .dropzone {

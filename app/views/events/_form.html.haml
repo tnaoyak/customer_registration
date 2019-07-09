@@ -45,10 +45,10 @@
         .form-label 画像を選択
         = i.attachment_field :image, id: "drop_area", class: "input-field image-field", value: "#{event.image}"
         = i.label :image, "クリックして選択", for: "drop_area", class: "image-input-field", id: "img_field"
-    - if event.image
-      .form-label.saved_image_title 保存済み画像
-      .saved_image_area
-        = attachment_image_tag event.image, :image, :fill, 200, 120, format: "jpg"
+        - if event.image.id
+          .form-label.saved_image_title 保存済み画像
+          .saved_image_area
+            = attachment_image_tag event.image, :image, :fill, 200, 120, format: "jpg"
     .form-group
       = f.label :remarks, "備考", class: "form-label"
       = f.text_area :remarks, placeholder: "補足事項など", class: "input-field text-area", value: "#{event.remarks}"

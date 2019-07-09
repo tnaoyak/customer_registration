@@ -1,0 +1,83 @@
+.footer
+  %p.footer_message
+    ポートフォリオご覧いただきありがとうございます。
+    %br
+    機能などの説明は以下になります。
+    %br
+    前職での経験から、業務アプリのような見た目になっています。
+    %br
+    完成度低いですが、随時改修していきたいと思います。
+  %table
+    %tr
+      %th アプリ
+      %td イベント登録アプリ
+    %tr
+      %th 関連URL
+      %td
+        Github:
+        = link_to "https://github.com/tnaoyak/event_registration", "https://github.com/tnaoyak/event_registration", class: "footer_url"
+        %br
+        Qiita:
+        = link_to "https://qiita.com/NT90957869", "https://qiita.com/NT90957869", class: "footer_url"
+    %tr
+      %th 制作期間
+      %td 約8日
+    %tr
+      %th 使用した技術
+      %td
+        %p
+          Ruby, Ruby on Rails, Haml, sass, jQuery
+          %br
+          MySQL, refile, AWS S3, Git, Github, RSpec
+          %br
+          jQueryValidationプラグイン, flatpickr
+    %tr
+      %th 工夫した技術
+      %td
+        %p
+          1) テキストフィールド, テキストエリア, プルダウンセレクト,
+          %br
+          チェックボックス,ラジオボタン, ファイルアップロード, ボタン,
+          %br
+          の７つの機能を実装
+          %br
+          %br
+          2) 画像アップロードにrefileを使用し、画像はAWS S3へアップロード
+          %br
+          %br
+          3) jQueryValidationプラグインによるフォームバリデーション、エラーメッセージ表示
+          %br
+          %br
+          4) flatpickrを導入し、カレンダー形式での日付選択
+          %br
+          %br
+          5) 画像選択後、選択した画像のサムネイルを表示
+          %br
+          %br
+          6) イベント情報と画像を別テーブルに保存するためにfields_forを使用
+          %br
+          refileを使用したファイルアップロードと組み合わせて動く記述を書くため、トライ＆エラーを繰り返した
+    %tr
+      %th 工夫した動作
+      %td
+        %p
+          1) 「学校を新規登録する」にチェックを入れると学校を新規登録するフォームが出現する。
+          %br
+          「学校を新規登録する」にチェックを入れた場合は選択した学校名は登録されず、選択欄の編集もできない。
+          %br
+          %br
+          2) 「WEB公開」のチェックを「有」にすると公開日選択フォームが入力可能になり、
+          %br
+          「無」の時はグレーアウト、入力不可になる。DBへの登録もされない。
+          %br
+          %br
+          3) 「WEB公開日」の「公開終了を1ヶ月後に設定」をチェックすると、「終了日」が「開始日」の1ヶ月後になる
+          %br
+          %br
+          4) 登録、編集完了時にフラッシュメッセージを表示
+          %br
+          %br
+          5) 一覧ページは表形式で表示
+          %br
+          %br
+          6) 一覧ページで学校名orIDをクリックすると詳細画面へ。詳細画面では編集、削除が可能。
