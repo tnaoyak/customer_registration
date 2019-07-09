@@ -198,6 +198,7 @@
   transition: 0.3s ease-out;
   text-align: center;
 }
+
 .flash {
   color: white;
   background: rgb(124, 235, 255);
@@ -208,6 +209,10 @@
   width: 100%;
   border-radius: 0 0 2px 2px;
   font-size: 14px;
+}
+// エラーメッセージ表示調整用
+.name_field {
+  width: 100%;
 }
 // #img_field:hover {
 //   background-color: #EDBC6C;

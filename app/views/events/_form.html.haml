@@ -1,8 +1,9 @@
 .event-form
-  = form_with model: @event do |f|
+  = form_with model: @event, html: { class: "event-form-content" } do |f|
     .form-group
       = f.label :name, "イベント名", class: "form-label"
-      = f.text_field :name, placeholder: "イベント名を入力", class: "input-field", value: "#{event.name}"
+      .name_field
+        = f.text_field :name, placeholder: "イベント名を入力", class: "input-field", value: "#{event.name}"
     .form-group
       = f.label :school_id, "学校名", class: "form-label"
       .select-wrap
@@ -15,7 +16,9 @@
     = fields_for @school do |s|
       .form-group.new_school
         = s.label :name, "新規学校名", class: "form-label"
-        = s.text_field :name, placeholder: "新規学校名を入力", class: "input-field"
+        .name_field
+          = s.text_field :name, placeholder: "新規学校名を入力", class: "input-field"
+      #school_name_error
     .form-group
       %label.form-label web公開
       .radio-button-wrap
