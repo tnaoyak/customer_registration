@@ -31,11 +31,11 @@
     .form-group.public-wrap
       %label.form-label.public-wrap__label web公開日
       .public-wrap__form
-        .public-wrap__start_date
+        .public-wrap__start_date-form
           = f.label :public_start_date, "開始日", class: "public-wrap__title"
           = f.text_field :public_start_date,{ type: "text", id: "public-wrap__start-date", class: "public-wrap__date", value: "#{event.public_start_date}"}
           %span.public-wrap__wave-line 〜
-        .public-wrap__end_date
+        .public-wrap__end_date-form
           = f.label :public_end_date, "終了日", class: "public-wrap__title"
           = f.text_field :public_end_date, type: "text", id: "public-wrap__end-date", class: "public-wrap__date", value: "#{event.public_end_date}"
       .public-period
