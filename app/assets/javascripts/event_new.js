@@ -48,6 +48,14 @@ $(document).on('turbolinks:load', function(){
     }
   });
 
+  // カレンダー形式の日付入力設定
+  $('.public-wrap__date').flatpickr({
+    'locale': 'ja',
+    dateFormat: 'Y/m/d',
+    minDate: 'today',
+    defaultDate: 'today'
+  });
+
   // チェックすると1ヶ月後の日付を表示する処理
   $('#public-period__checkbox').change(function () {
     // 1ヶ月後の日付を算出する関数
@@ -84,15 +92,6 @@ $(document).on('turbolinks:load', function(){
       $('#public-wrap__end-date').val(endDate);
     }
   });
-
-  // カレンダー形式の日付入力設定
-  $('.public-wrap__date').flatpickr({
-    'locale': 'ja',
-    dateFormat: 'Y/m/d',
-    minDate: 'today',
-    defaultDate: 'today'
-  });
-
 
   // 選択された画像を取得し表示する処理
   $fileField = $('#drop_area')
