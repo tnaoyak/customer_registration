@@ -1,0 +1,7 @@
+// flatpickrカレンダーの土日に色を付ける
+.flatpickr-weekdaycontainer > .flatpickr-weekday:nth-child(1){
+  color: #dc3545;
+}
+.flatpickr-weekdaycontainer > .flatpickr-weekday:nth-child(7){
+  color: #007bff;
+}

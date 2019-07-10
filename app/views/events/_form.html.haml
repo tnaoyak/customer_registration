@@ -30,11 +30,14 @@
         = f.hidden_field :public_end_date, id: "public_end_date_hidden", value: "#{event.public_end_date}"
     .form-group.public-wrap
       %label.form-label.public-wrap__label web公開日
-      = f.label :public_start_date, "開始日", class: "public-wrap__title"
-      = f.text_field :public_start_date,{ type: "text", id: "public-wrap__start-date", class: "public-wrap__date", value: "#{event.public_start_date}"}
-      %span.public-wrap__wave-line 〜
-      = f.label :public_end_date, "終了日", class: "public-wrap__title"
-      = f.text_field :public_end_date, type: "text", id: "public-wrap__end-date", class: "public-wrap__date", value: "#{event.public_end_date}"
+      .public-wrap__form
+        .public-wrap__start_date
+          = f.label :public_start_date, "開始日", class: "public-wrap__title"
+          = f.text_field :public_start_date,{ type: "text", id: "public-wrap__start-date", class: "public-wrap__date", value: "#{event.public_start_date}"}
+          %span.public-wrap__wave-line 〜
+        .public-wrap__end_date
+          = f.label :public_end_date, "終了日", class: "public-wrap__title"
+          = f.text_field :public_end_date, type: "text", id: "public-wrap__end-date", class: "public-wrap__date", value: "#{event.public_end_date}"
       .public-period
         %label.checkbox
           %input{ type: "checkbox", name: "public-period", id: "public-period__checkbox"}
