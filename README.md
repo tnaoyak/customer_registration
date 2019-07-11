@@ -13,7 +13,7 @@
   Qiit[https://qiita.com/NT90957869](https://qiita.com/NT90957869)
 
 ▼制作期間
-  約8日
+  約10日
 
 ▼使用した技術
   Ruby, Ruby on Rails, Haml, sass, jQuery

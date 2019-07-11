@@ -46,10 +46,13 @@ a {
 }
 
 @media screen and (max-width:479px) {
+  body {
+    overflow: hidden;
+  }
   .event {
-    padding: 30px;
+    overflow: hidden;
     &__head {
-      max-width: 800px;
+      width: 100%;
       margin: 0 auto;
       padding: 10px;
       text-align: center;
