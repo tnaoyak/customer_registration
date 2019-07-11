@@ -4,7 +4,7 @@
       %h1.col イベント一覧
       .event__head__link
         = link_to "イベント登録へ", new_event_path
-    .event-form
+    .event-form.xl-size
       %table.event-index
         %tr.event-index__title
           %th.event-index__title--event_id イベントID
@@ -27,5 +27,36 @@
               = event.public_start_date
             %td.event-index__content--public_end_date.table-num
               = event.public_end_date
+      .paginate
+        = paginate(@events)
+
+    .event-form.sm-size
+      - @events.each do |event|
+        %table.event-index
+          %tr.event-index__title
+            %th.event-index__title--event_id イベントID
+            %td.event-index__content--event_id
+              = link_to "#{event.id}", event_path(event.id)
+          %tr.event-index__title
+            %th.event-index__title--event_name イベント名
+            %td.event-index__content--event_name
+              = link_to "#{event.name}", event_path(event.id)
+          %tr.event-index__title
+            %th.event-index__title--school_name 学校名
+            %td.event-index__content--school_name
+              = event.school.name
+          %tr.event-index__title
+            %th.event-index__title--web_public WEB公開
+            %td.event-index__content--web_public
+              = web_public_display_conversion(event)
+          %tr.event-index__title
+            %th.event-index__title--public_start_date 公開開始日
+            %td.event-index__content--public_start_date
+              = event.public_start_date
+          %tr.event-index__title
+            %th.event-index__title--public_end_date 公開終了日
+            %td.event-index__content--public_end_date
+              = event.public_end_date
+          -# %tr.event-index__content
       .paginate
         = paginate(@events)
