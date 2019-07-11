@@ -1,3 +1,16 @@
+@media screen and (min-width:480px){
+  .sm-size {
+    display: none;
+  }
+}
+
+@media screen and (max-width:479px) {
+  .xl-size {
+    display: none;
+  }
+}
+
+
 .event-index {
   padding-top: 30px;
   margin: 0 auto;
@@ -5,11 +18,7 @@
     text-align: center;
   }
 }
-.event-index__title {
-  display: flex;
-}
 .event-index__content {
-  display: flex;
   &--web_public {
     text-align: center;
   }
