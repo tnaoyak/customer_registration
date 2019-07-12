@@ -52,8 +52,7 @@ $(document).on('turbolinks:load', function(){
   $('.public-wrap__date').flatpickr({
     'locale': 'ja',
     dateFormat: 'Y/m/d',
-    minDate: 'today',
-    defaultDate: 'today'
+    minDate: 'today'
   });
 
   // チェックすると1ヶ月後の日付を表示する処理
@@ -112,6 +111,10 @@ $(document).on('turbolinks:load', function(){
       };
     })(file);
     reader.readAsDataURL(file);
+  });
+
+  $(document).ready(function(){
+    $("#index-table-tablesorter").tablesorter();
   });
 });
 

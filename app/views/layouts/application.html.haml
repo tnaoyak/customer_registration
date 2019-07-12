@@ -18,6 +18,10 @@
     %link(rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css")
     // IE9対応
     %link(rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/ie.css")
+
+    // tablesorter.js導入
+    -# %link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/theme.default.min.css")
+    %script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js")
   %body
     -if flash[:notice]
       .flash
