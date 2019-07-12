@@ -19,6 +19,7 @@
   Ruby, Ruby on Rails, Haml, sass, jQuery
   MySQL, refile, AWS S3, Git, Github, RSpec
   jQueryValidationプラグイン, flatpickr
+  tablesorter.js
 
 ▼工夫した技術
   1) テキストフィールド, テキストエリア, プルダウンセレクト,
