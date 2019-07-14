@@ -1,11 +1,10 @@
-%body
-  .event
-    .event__head
-      %h1.col イベント一覧
-      .event__head__link
-        = link_to "イベント登録へ", new_event_path
-    .event-form.xl-size
-      %table.event-index.tablesorter#index-table-tablesorter
+.main-area
+  = render partial: 'nav_panel'
+  .content
+    .content__head
+      %h4 イベント一覧
+    .index-area.xl-size
+      %table.event-index.striped.tablesorter#index-table-tablesorter
         %thead
           %tr
             %th
@@ -44,9 +43,9 @@
       .paginate
         = paginate(@events)
 
-    .event-form.sm-size
+    .index-area.sm-size
       - @events.each do |event|
-        %table.event-index
+        %table.event-index.striped
           %tr.event-index__title
             %th.event-index__title--event_id イベントID
             %td.event-index__content--event_id
