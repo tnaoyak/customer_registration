@@ -1,27 +1,27 @@
 # README
 
-ポートフォリオご覧いただきありがとうございます。
-機能などの説明は以下になります。
+ポートフォリオご覧いただきありがとうございます。  
+機能などの説明は以下になります。  
 
-前職での経験から、業務アプリのような見た目になっています。
+前職での経験から、業務アプリのような見た目になっています。  
 完成度低いですが、随時改修していきたいと思います。
 
 イベント登録アプリ
 
-▼関連URL
-  Github[https://github.com/tnaoyak/event_registration](https://github.com/tnaoyak/event_registration)
+▼関連URL  
+  Github[https://github.com/tnaoyak/event_registration](https://github.com/tnaoyak/event_registration)  
   Qiit[https://qiita.com/NT90957869](https://qiita.com/NT90957869)
 
-▼制作期間
+▼制作期間  
   約12日
 
-▼使用した技術
+▼使用した技術  
   Ruby, Ruby on Rails, Haml, sass, jQuery
   MySQL, refile, AWS S3, Git, Github, RSpec
   jQueryValidationプラグイン, flatpickr
   tablesorter.js, materialize.css
 
-▼工夫した技術
+▼工夫した技術  
   1) テキストフィールド, テキストエリア, プルダウンセレクト,
     チェックボックス,ラジオボタン, ファイルアップロード, ボタン,
     の７つの機能を実装
@@ -34,7 +34,7 @@
 
   5) 画像選択後、選択した画像のサムネイルを表示
 
-  6) イベント情報と画像を別テーブルに保存するためにfields_forを使用
+  6) イベント情報と画像を別テーブルに保存するためにfields_forを使用  
     refileを使用したファイルアップロードと組み合わせて動く記述を書くため、トライ＆エラーを繰り返した
 
   7) メディアクエリを利用したレスポンシブ対応
@@ -44,8 +44,8 @@
 
   9) materialize.cssを使用したマテリアルデザイン風
 
-▼工夫した動作
-1) 「学校を新規登録する」にチェックを入れると学校を新規登録するフォームが出現する。
+▼工夫した動作  
+1) 「学校を新規登録する」にチェックを入れると学校を新規登録するフォームが出現する。  
   「学校を新規登録する」にチェックを入れた場合は選択した学校名は登録されず、選択欄の編集もできない。
 
 2) 「WEB公開」のチェックを「有」にすると公開日選択フォームが入力可能になり、

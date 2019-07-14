@@ -40,7 +40,7 @@
                 = event.public_start_date
               %td.event-index__content--public_end_date.table-num
                 = event.public_end_date
-      .paginate
+      .paginate.center-align
         = paginate(@events)
 
     .index-area.sm-size
@@ -70,6 +70,5 @@
             %th.event-index__title--public_end_date 公開終了日
             %td.event-index__content--public_end_date
               = event.public_end_date
-          -# %tr.event-index__content
       .paginate
         = paginate(@events)

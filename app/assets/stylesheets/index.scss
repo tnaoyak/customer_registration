@@ -27,6 +27,20 @@
     text-align: center;
   }
 }
-.paginate {
-  text-align: center;
+.index-area {
+  .paginate {
+    .pagination {
+      background-color: white;
+      box-shadow: none;
+      letter-spacing: 5px;
+      text-align: center;
+      display: inline-block;
+      span {
+        color: $main-text-black;
+        a {
+          color: $main-text-black;
+        }
+      }
+    }
+  }
 }
