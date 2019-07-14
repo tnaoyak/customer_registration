@@ -10,6 +10,9 @@
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
     %link(rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous")
 
+    // Google Web Fonts Noto Sans JP
+    %link(href="https://fonts.googleapis.com/css?family=Noto+Sans+JP&display=swap" rel="stylesheet")
+
     // flatpickr導入
     %link(rel="stylesheet" href="https://unpkg.com/flatpickr/dist/flatpickr.min.css")
     %script(src="https://unpkg.com/flatpickr")
@@ -20,11 +23,19 @@
     %link(rel="stylesheet" type="text/css" href="https://npmcdn.com/flatpickr/dist/ie.css")
 
     // tablesorter.js導入
-    -# %link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/css/theme.default.min.css")
     %script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.1/js/jquery.tablesorter.min.js")
+
+    // Materialize導入
+    %link(href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet")
+    %link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css")
+    %script(src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js")
+
   %body
     -if flash[:notice]
       .flash
         = flash[:notice]
+    %nav.teal
+      .nav-wrapper
+        = link_to "イベント登録アプリ", root_path, class: "brand-logo center"
     = yield
     = render partial: 'footer'

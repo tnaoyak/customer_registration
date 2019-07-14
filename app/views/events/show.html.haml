@@ -1,12 +1,10 @@
-%body
-  .event
-    .event__head
-      %h1 イベント詳細
-      .event__head__link
-        = link_to "イベント一覧へ", events_path, class: "event-show-link"
-        = link_to "イベント登録へ", new_event_path, class: "event-show-link"
-    .event-form.xl-size
-      %table.event-index
+.main-area
+  = render partial: 'nav_panel'
+  .content
+    .content__head
+      %h4 イベント詳細
+    .show-are.xl-size
+      %table.event-index.striped
         %tr
           %th.event-index__title--event_id イベントID
           %th.event-index__title--event_name イベント名
@@ -27,7 +25,7 @@
             = @event.public_start_date
           %td.event-index__content--public_end_date.table-num
             = @event.public_end_date
-      %table.event-show
+      %table.event-show.striped
         %tr.event-show__title
           %th.event-show__title--image 画像
           %th.event-show__title--remarks 備考
@@ -37,11 +35,11 @@
           %td.event-show__content--remarks
             = @event.remarks
       .event-form__edit-link
-        = link_to "編集", edit_event_path(@event.id), class: "link-btn"
-        = link_to "削除", "/events/#{@event.id}", method: :delete, class: "link-btn"
+        = link_to "編集", edit_event_path(@event.id), class: "waves-effect waves-light btn cyan lighten-"
+        = link_to "削除", "/events/#{@event.id}", method: :delete, class: "waves-effect waves-light btn cyan lighten-"
 
     .event-form.sm-size
-      %table.event-index
+      %table.event-index.striped
         %tr.event-index__title
           %th.event-index__title--event_id イベントID
           %td.event-index__content--event_id
@@ -66,7 +64,7 @@
           %th.event-index__title--public_end_date 公開終了日
           %td.event-index__content--public_end_date
             = @event.public_end_date
-      %table.event-show
+      %table.event-show.striped
         %tr.event-show__title
           %th.event-show__title--image 画像
         %tr.event-show__content
@@ -78,5 +76,5 @@
           %td.event-show__content--remarks
             = @event.remarks
       .event-form__edit-link
-        = link_to "編集", edit_event_path(@event.id), class: "link-btn"
-        = link_to "削除", "/events/#{@event.id}", method: :delete, class: "link-btn"
+        = link_to "編集", edit_event_path(@event.id), class: "waves-effect waves-light btn cyan lighten-"
+        = link_to "削除", "/events/#{@event.id}", method: :delete, class: "waves-effect waves-light btn cyan lighten-"

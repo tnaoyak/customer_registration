@@ -1,4 +1,4 @@
-@media screen and (min-width:480px){
+@media screen and (min-width:601px){
   .form-group {
     margin: 40px 0 0;
     box-sizing: border-box;
@@ -6,7 +6,7 @@
   }
   .form-label{
     font-weight: 600;
-    font-size: 18px;
+    font-size: 1.2rem;
     width: 20%;
     box-sizing: border-box;
     line-height: 50px;
@@ -16,7 +16,7 @@
   }
 }
 
-@media screen and (max-width:479px) {
+@media screen and (max-width:600px) {
   .form-group {
     margin: 40px 0 0;
     box-sizing: border-box;
@@ -31,20 +31,44 @@
   .public-wrap__form {
   }
 }
-
-.input-field {
-  height: 48px;
-  padding: 10px 16px 8px;
-  border-radius: 4px;
-  border: 1px solid gray;
-  background: #fff;
-  line-height: 1.5;
-  font-size: 16px;
-  box-sizing: border-box;
-  width: 100%;
+.event-form {
+  padding: 0 30px 30px;
+  .disabled {
+    color: #dddddd;
+    label {
+      color: #dddddd;
+    }
+  }
+  .btn-area {
+    width: 100%;
+    text-align: center;
+    .registration-btn {
+      margin: 40px auto 0;
+      width: 250px;
+      font-size: 16px;
+    }
+  }
+  .input-field {
+    height: 50px;
+    padding: 10px 16px 8px;
+    border-bottom: 1px solid $boder-color;
+    background: #fff;
+    border-radius: 0;
+    outline: none;
+    line-height: 1.5;
+    font-size: 16px;
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 0;
+  }
+  .error {
+    color: red;
+    margin-top: 5px;
+    font-size: 14px;
+  }
 }
 .text-area {
-  height: 150px;
+  height: 126px;
 }
 .select-wrap {
   position: relative;
@@ -52,10 +76,12 @@
   .select-default {
     position: relative;
     width: 100%;
-    height: 48px;
+    height: 50px;
     padding: 0 16px;
-    border-radius: 4px;
-    border: 1px solid gray;
+    border: none;
+    border-bottom: 1px solid $boder-color;
+    border-radius: 0;
+    outline: none;
     background: 0;
     font-size: 16px;
     line-height: 1.5;
@@ -73,7 +99,6 @@
   .radio-button {
     height: 50px;
     &--text {
-      vertical-align: top;
       line-height: 50px;
     }
   }
@@ -90,13 +115,13 @@
     margin-left: 20px;
   }
   &__date {
-    height: 48px;
-    padding: 0 16px;
-    border-radius: 4px;
-    border: 1px solid gray;
+    border: none;
+    border-bottom: 1px solid $boder-color;
+    border-radius: 0;
+    outline: none;
+    height: 3rem;
     font-size: 16px;
-    cursor: pointer;
-    margin-left: 10px;
+    text-align: center;
   }
   &__wave-line {
     margin-left: 20px;
@@ -105,85 +130,12 @@
     margin: 10px 0 0 20px;
   }
 }
-.disabled {
-  color: #dddddd;
-  .public-wrap__date {
-    color: #dddddd;
-    border: 1px solid #dddddd;
-  }
-  .checkbox--area::after {
-    margin-top: -10px;	/* チェック枠の位置 */
-    width: 15px;	/* ボックスの横幅を指定する */
-    height: 15px;	/* ボックスの高さを指定する */
-    border: 2px solid #dddddd;	/* ボックスの境界線を実線で指定する */
-    border-radius: 6px;	/* ボックスの角丸を指定する */
-    position: absolute;	/* ボックスの位置を指定する */
-    content: "";	/* ボックスのコンテンツ */
-    display: block;	/* ブロックレベル要素化する */
-    top: 50%;	/* 上部から配置の基準位置を決める */
-  }
-  .checkbox--area::before {
-    display: none;
-  }
-}
+
 .checkbox {
-  input {
-    display: none;
+  span {
+    font-size: 1rem;
+    vertical-align: top;
   }
-  &--area {
-    vertical-align: middle;
-    position: relative;
-    display: inline-block;
-    width: 18px;
-    height: 18px;
-    margin-right: 5px;
-  }
-  &--area::before {
-    left: 6px;	/* 左から配置の基準位置を決める */
-    margin-top: -7px;	/* チェックマークの位置 */
-    width: 5px;	/* ボックスの横幅を指定する */
-    height: 9px;	/* ボックスの高さを指定する */
-    border-right: 3px solid #0171bd;	/* 境界線（右）のスタイルを指定する */
-    border-bottom: 3px solid #0171bd;	/* 境界線（下）のスタイルを指定する */
-    transform: rotate(45deg);	/* 要素を回転させる */
-    opacity: 0;	/* 要素を透過指定する */
-    position: absolute;	/* ボックスの位置を指定する */
-    content: "";	/* ボックスのコンテンツ */
-    display: block;	/* ブロックレベル要素化する */
-    top: 50%;	/* 上部から配置の基準位置を決める */
-  }
-  input[type=checkbox]:checked + &--area::before {
-    opacity: 1;	/* 要素を表示する */
-  }
-  &--area::after {
-    // left: 15px;	/* 左から配置の基準位置を決める */
-    margin-top: -10px;	/* チェック枠の位置 */
-    width: 15px;	/* ボックスの横幅を指定する */
-    height: 15px;	/* ボックスの高さを指定する */
-    border: 2px solid #ccc;	/* ボックスの境界線を実線で指定する */
-    border-radius: 6px;	/* ボックスの角丸を指定する */
-    position: absolute;	/* ボックスの位置を指定する */
-    content: "";	/* ボックスのコンテンツ */
-    display: block;	/* ブロックレベル要素化する */
-    top: 50%;	/* 上部から配置の基準位置を決める */
-  }
-}
-.btn-default {
-  display: block;
-  width: 250px;
-  line-height: 48px;
-  font-size: 14px;
-  border: 1px solid transparent;
-  cursor: pointer;
-  text-align: center;
-}
-.btn-red {
-  background: #ea352d;
-  border: 1px solid #ea352d;
-  color: #fff;
-  margin: 40px auto 0;
-  transition: all ease-out .3s;
-  -webkit-transition: all ease-out .3s;
 }
 
 // 画像サムネイル表示エリア
@@ -194,6 +146,31 @@
   display: none;
 }
 #img_field {
+  font-size: 15px;
+  margin-top: 10px;
+  padding: 5px 8px;
+  border: solid 1px $boder-color;
+  color: $boder-color;
+  position: relative;
+  padding: 0;
+  cursor: pointer;
+  width: 200px;
+  height: 120px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-color: #fff;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: 0.3s ease-out;
+  text-align: center;
+}
+
+// 保存済み画像表示
+.saved_image_title{
+  margin-left: 20px;
+}
+.saved_image {
   font-size: 15px;
   margin-top: 10px;
   padding: 5px 8px;
@@ -214,13 +191,15 @@
   transition: 0.3s ease-out;
   text-align: center;
 }
+.saved_image_area {
+  margin-top: 10px;
+}
 
 .flash {
   color: white;
   background: #38aef0;
   text-align: center;
   position: absolute;
-  // top: 64px;
   z-index: 10;
   width: 100%;
   border-radius: 0 0 2px 2px;

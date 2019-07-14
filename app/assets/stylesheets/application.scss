@@ -1,15 +1,16 @@
+@import 'config/reset';
 @import 'dropzone/basic';
 @import 'dropzone/dropzone';
 @import "bootstrap";
+@import 'flatpickr';
 
-@import 'reset';
-@import 'event';
+@import 'config/color';
+
 @import 'index';
 @import 'event_show';
-@import 'event_edit';
 @import 'form';
 @import 'table';
-@import 'button';
-@import 'error_message';
-@import 'flatpickr';
 @import 'footer';
+
+@import 'nav_panel';
+@import 'common';
