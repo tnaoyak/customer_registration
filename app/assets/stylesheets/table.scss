@@ -3,6 +3,9 @@
     width: 100px;
     text-align: center;
   }
+  table td {
+    text-align: center;
+  }
 }
 
 @media screen and (max-width:600px) {
@@ -12,10 +15,13 @@
   table td {
     text-align: center;
   }
+  .event-show__title th {
+    text-align: center;
+  }
 }
-.table-num {
-  text-align: right;
-}
+// .table-num {
+//   text-align: right;
+// }
 
 // @media screen and (min-width:480px){
 //   table th:first-child{

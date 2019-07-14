@@ -1,4 +1,4 @@
-@import 'reset';
+@import 'config/reset';
 @import 'dropzone/basic';
 @import 'dropzone/dropzone';
 @import "bootstrap";
@@ -6,15 +6,10 @@
 
 @import 'config/color';
 
-
-@import 'event';
 @import 'index';
 @import 'event_show';
-@import 'event_edit';
 @import 'form';
 @import 'table';
-@import 'button';
-@import 'error_message';
 @import 'footer';
 
 @import 'nav_panel';
