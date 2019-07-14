@@ -5,3 +5,18 @@
 .flatpickr-weekdaycontainer > .flatpickr-weekday:nth-child(7){
   color: #007bff;
 }
+
+.flatpickr-current-month {
+  select {
+    display: inline-block;
+  }
+  .numInputWrapper {
+    vertical-align: top;
+    .numInput {
+      font-size: 18px;
+      vertical-align: top;
+      height: 22px;
+      margin: 0;
+    }
+  }
+}

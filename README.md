@@ -13,13 +13,13 @@
   Qiit[https://qiita.com/NT90957869](https://qiita.com/NT90957869)
 
 ▼制作期間
-  約11日
+  約12日
 
 ▼使用した技術
   Ruby, Ruby on Rails, Haml, sass, jQuery
   MySQL, refile, AWS S3, Git, Github, RSpec
   jQueryValidationプラグイン, flatpickr
-  tablesorter.js
+  tablesorter.js, materialize.css
 
 ▼工夫した技術
   1) テキストフィールド, テキストエリア, プルダウンセレクト,
@@ -41,6 +41,8 @@
     （PC、スマホサイズのみ）
 
   8) tablesorter.jsを使用したテーブルソート機能
+
+  9) materialize.cssを使用したマテリアルデザイン風
 
 ▼工夫した動作
 1) 「学校を新規登録する」にチェックを入れると学校を新規登録するフォームが出現する。

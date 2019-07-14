@@ -1,0 +1,55 @@
+@media screen and (min-width:601px){
+  .main-area {
+    display: flex;
+    color: $main-text-black;
+
+  }
+  .content {
+    width: 100%;
+    height: calc(100vh - 64px);
+    overflow: scroll;
+    border-bottom: 1px solid $boder-color;
+    padding: 30px;
+    h4 {
+      text-align: center;
+      margin: 30px auto 0;
+    }
+  }
+}
+
+@media screen and (max-width:600px) {
+  body {
+    .nav-wrapper {
+      a {
+        font-size: 20px;
+      }
+    }
+  }
+  .main-area {
+    color: $main-text-black;
+  }
+  .content {
+    width: 100%;
+    border-bottom: 1px solid $boder-color;
+    padding: 30px;
+    h4 {
+      text-align: center;
+      margin: 30px auto 0;
+    }
+  }
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: $main-text-black;
+}
+.form-group {
+  label {
+    color: $main-text-black;
+    font-size: 1.2rem;
+  }
+}

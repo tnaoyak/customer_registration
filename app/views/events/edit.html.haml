@@ -1,7 +1,6 @@
-%body
-  .event
-    .event__head
-      %h1 イベント編集
-      .event__head__link
-        = link_to "イベント一覧へ", events_path
+.main-area
+  = render partial: 'nav_panel'
+  .content
+    .content__head
+      %h4 イベント編集
     = render "form", event: @event
