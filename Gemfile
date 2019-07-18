@@ -80,7 +80,6 @@ gem 'haml-rails'
 gem 'erb2haml'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick", github: 'refile/refile-mini_magick'
-gem 'dropzonejs-rails'
 gem 'rails_12factor', group: :production
 gem 'kaminari'
 gem "refile-s3"
